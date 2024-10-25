@@ -12,4 +12,4 @@ CMD ["redpanda", "start", \
   "--memory", "4G", \
   "--default-log-level=info"]
 
-EXPOSE 9092 19092 8082 18082 8081 18081 33145
+EXPOSE 19092
