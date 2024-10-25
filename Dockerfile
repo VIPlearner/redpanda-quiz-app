@@ -14,5 +14,6 @@ CMD ["redpanda", "start", \
   "--smp", "1", \
   "--memory", "4G", \
   "--default-log-level=info"]
+  
 
 EXPOSE 19092 18082 18081 33145
