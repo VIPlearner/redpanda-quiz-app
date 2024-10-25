@@ -23,4 +23,5 @@ CMD ["redpanda", "start", \
      "--advertise-rpc-addr", "redpanda-0:33145", \
      "--smp", "1", \
      "--memory", "4G", \
-     "--default-log-level=info"]
+     "--default-log-level=info", \
+     "--overprovision"]
