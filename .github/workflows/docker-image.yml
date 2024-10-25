@@ -13,8 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Log in to Heroku Container Registry
-      run: |
-        echo "${{ secrets.HEROKU_API_KEY }}" | docker login --username=_ --password-stdin registry.heroku.com
+      run: echo "${{ secrets.HEROKU_API_KEY }}" | docker login --username=_ --password-stdin registry.heroku.com
     - name: Build the Docker image
       run: docker build -t registry.heroku.com/quiz-redpanda-docker/web .
     - name: Push the Docker image to Heroku
