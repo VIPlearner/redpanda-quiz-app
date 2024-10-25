@@ -1,9 +1,9 @@
-FROM docker.redpanda.com/redpandadata/redpanda:v24.2.5
-
-RUN mkdir -p /etc/redpanda
-COPY redpanda.yaml /etc/redpanda/redpanda.yaml
+FROM docker.redpanda.com/redpandadata/redpanda:v24.2.7
 
 CMD ["redpanda", "start", \
+  "--mode", "dev-container", \
+  "--overprovisioned", \
+  "--unsafe-bypass-fsync", "true", \
   "--kafka-addr", "internal://0.0.0.0:9092,external://0.0.0.0:19092", \
   "--advertise-kafka-addr", "internal://redpanda-0:9092,external://your-production-domain-or-ip:19092", \
   "--pandaproxy-addr", "internal://0.0.0.0:8082,external://0.0.0.0:18082", \
@@ -15,4 +15,4 @@ CMD ["redpanda", "start", \
   "--memory", "4G", \
   "--default-log-level=info"]
 
-EXPOSE 19092
+EXPOSE 19092 18082 18081 33145
