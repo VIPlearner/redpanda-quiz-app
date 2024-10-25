@@ -11,11 +11,7 @@ RUN apt-get update && \
     apt-get install -y redpanda && \
     apt-get clean
 
-echo "redpanda ALL=(ALL) NOPASSWD:ALL"
-
 EXPOSE 9092 19092 8082 8081 9644
-
-echo "redpanda ALL=(ALL) NOPASSWD:ALL"
 
 CMD ["redpanda", "start", \
      "--kafka-addr", "internal://0.0.0.0:9092,external://0.0.0.0:19092", \
@@ -28,5 +24,3 @@ CMD ["redpanda", "start", \
      "--smp", "1", \
      "--memory", "4G", \
      "--default-log-level=info"]
-
-echo "redpanda ALL=(ALL) NOPASSWD:ALL"
