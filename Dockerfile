@@ -12,7 +12,7 @@ RUN apt-get update && \
 # Configure Redpanda Bootstrap
 ENV PATH="/usr/local/bin:$PATH"
 
-RUN rpk redpanda config bootstrap --self 0.0.0.0 --advertised-kafka "https://quiz-redpanda-docker-45c5f0975162.herokuapp.com/"
+RUN rpk redpanda config bootstrap--advertised-kafka "https://quiz-redpanda-docker-45c5f0975162.herokuapp.com/"
 RUN rpk redpanda config set redpanda.empty_seed_starts_cluster false
 
 # Expose the required ports
