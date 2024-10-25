@@ -3,6 +3,7 @@ FROM ubuntu:20.04
 RUN apt-get update && \
     apt-get install -y curl gnupg software-properties-common && \
     curl -1sLf https://packages.vectorized.io/redpanda/ubuntu/setup | bash && \
+    sudo apt-get install -y redpanda && \
     apt-get update && \
     apt-cache policy redpanda && \
     apt-get install -y redpanda && \
