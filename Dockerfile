@@ -1,5 +1,8 @@
 FROM docker.redpanda.com/redpandadata/redpanda:v24.2.5
 
+RUN mkdir -p /etc/redpanda
+COPY redpanda.yaml /etc/redpanda/redpanda.yaml
+
 CMD ["redpanda", "start", \
   "--kafka-addr", "internal://0.0.0.0:9092,external://0.0.0.0:19092", \
   "--advertise-kafka-addr", "internal://redpanda-0:9092,external://your-production-domain-or-ip:19092", \
