@@ -2,7 +2,8 @@ FROM ubuntu:20.04
 
 RUN apt-get update && \
     apt-get install -y curl gnupg software-properties-common && \
-    curl -1sLf 'https://packages.vectorized.io/redpanda/ubuntu/setup' | bash && \
+    curl -1sLf https://packages.vectorized.io/redpanda/ubuntu/setup | bash && \
+    apt-get update && \
     apt-get install -y redpanda && \
     apt-get clean
 
