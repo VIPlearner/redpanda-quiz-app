@@ -11,3 +11,5 @@ CMD redpanda start \
   --smp 1 \
   --memory 4G \
   --default-log-level=info
+
+EXPOSE 9092 19092 8082 18082 8081 18081 33145
