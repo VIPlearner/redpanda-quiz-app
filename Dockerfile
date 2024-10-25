@@ -13,5 +13,4 @@ RUN apt-get update && \
 
 EXPOSE 9092 19092 8082 8081 9644
 
-CMD ["redpanda", "start", \
-     "--kafka-addr", "internal://0.0.0.0:9092,external://0.0.0.0:19092"]
+CMD ["redpanda", "start"]
