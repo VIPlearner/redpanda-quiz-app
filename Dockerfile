@@ -13,4 +13,6 @@ RUN apt-get update && \
 
 EXPOSE 9092 19092 8082 8081 9644
 
+RUN mkdir -p /sys/block
+
 CMD ["redpanda", "start"]
